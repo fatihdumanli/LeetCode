@@ -21,3 +21,4 @@ obj
 .vscode/
 Properties
 PackageSettings.cs
+.vs/
