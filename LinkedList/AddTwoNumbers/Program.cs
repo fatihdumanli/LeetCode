@@ -37,9 +37,8 @@ namespace AddTwoNumbers
 
         static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            var newHead = new ListNode();
-            newHead.next = SumNodes(l1, l2, 0);
-            return newHead.next;
+            var newHead = SumNodes(l1, l2, 0);
+            return newHead;
         }
 
 
