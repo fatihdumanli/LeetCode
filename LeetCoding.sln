@@ -51,6 +51,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TwoPointers", "TwoPointers"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerWithMostWater", "TwoPointers\ContainerWithMostWater\ContainerWithMostWater.csproj", "{732EE443-2CAF-473B-9F87-38388A69F95E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegerToRoman", "IntegerToRoman\IntegerToRoman.csproj", "{17893CF8-AECB-495D-8486-4A1DEC840C2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{732EE443-2CAF-473B-9F87-38388A69F95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{732EE443-2CAF-473B-9F87-38388A69F95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{732EE443-2CAF-473B-9F87-38388A69F95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17893CF8-AECB-495D-8486-4A1DEC840C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17893CF8-AECB-495D-8486-4A1DEC840C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17893CF8-AECB-495D-8486-4A1DEC840C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17893CF8-AECB-495D-8486-4A1DEC840C2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +154,7 @@ Global
 		{66D2519B-9CAE-4B5B-9E48-1321DC2A009A} = {90712935-0012-4ECC-8DB9-6428BD0F3997}
 		{5EBD1454-C0C6-4351-8A3F-E27F762A1556} = {F531DE4C-1482-4CB9-8337-D9B8CA623A71}
 		{732EE443-2CAF-473B-9F87-38388A69F95E} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
+		{17893CF8-AECB-495D-8486-4A1DEC840C2A} = {90712935-0012-4ECC-8DB9-6428BD0F3997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
