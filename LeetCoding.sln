@@ -41,8 +41,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTwoNumbers", "LinkedList
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMedianTwoSortedArrays", "FindMedianTwoSortedArrays\FindMedianTwoSortedArrays.csproj", "{EFE5138C-E52A-45F6-ADEB-2C446D457966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestPalindromicSubstring", "LongestPalindromicSubstring\LongestPalindromicSubstring.csproj", "{C63CEA2D-A8A8-40F6-BCAC-7009BEC75B75}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeNumber", "PalindromeNumber\PalindromeNumber.csproj", "{A0436CF9-075A-42F1-B675-B238CCC4D201}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TwoPointers", "TwoPointers", "{4B8E71A6-12DB-4400-8FFE-724E21D9A10D}"
@@ -58,6 +56,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "String", "String", "{17E97854-1EAC-4463-B345-4B235B43D9B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestCommonPrefix", "String\LongestCommonPrefix\LongestCommonPrefix.csproj", "{FFA2F486-4476-4A85-A52E-A4EB7D40118D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3Sum", "TwoPointers\3Sum\3Sum.csproj", "{6A1D7994-AC31-4575-8CBD-65DE65ECE26D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestPalindromicSubstring", "TwoPointers\LongestPalindromicSubstring\LongestPalindromicSubstring.csproj", "{50F5277F-25AE-43BC-899D-AADB0F8ED453}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,10 +123,6 @@ Global
 		{EFE5138C-E52A-45F6-ADEB-2C446D457966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE5138C-E52A-45F6-ADEB-2C446D457966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE5138C-E52A-45F6-ADEB-2C446D457966}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C63CEA2D-A8A8-40F6-BCAC-7009BEC75B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C63CEA2D-A8A8-40F6-BCAC-7009BEC75B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C63CEA2D-A8A8-40F6-BCAC-7009BEC75B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C63CEA2D-A8A8-40F6-BCAC-7009BEC75B75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0436CF9-075A-42F1-B675-B238CCC4D201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A0436CF9-075A-42F1-B675-B238CCC4D201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0436CF9-075A-42F1-B675-B238CCC4D201}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -149,6 +147,14 @@ Global
 		{FFA2F486-4476-4A85-A52E-A4EB7D40118D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFA2F486-4476-4A85-A52E-A4EB7D40118D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFA2F486-4476-4A85-A52E-A4EB7D40118D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1D7994-AC31-4575-8CBD-65DE65ECE26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1D7994-AC31-4575-8CBD-65DE65ECE26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1D7994-AC31-4575-8CBD-65DE65ECE26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1D7994-AC31-4575-8CBD-65DE65ECE26D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F5277F-25AE-43BC-899D-AADB0F8ED453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F5277F-25AE-43BC-899D-AADB0F8ED453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F5277F-25AE-43BC-899D-AADB0F8ED453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F5277F-25AE-43BC-899D-AADB0F8ED453}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +177,8 @@ Global
 		{84E4CAA6-A1E3-442B-988A-269AD7D060B6} = {90712935-0012-4ECC-8DB9-6428BD0F3997}
 		{4CF9B7C2-28B2-4C6B-A776-21B8A374B778} = {90712935-0012-4ECC-8DB9-6428BD0F3997}
 		{FFA2F486-4476-4A85-A52E-A4EB7D40118D} = {17E97854-1EAC-4463-B345-4B235B43D9B4}
+		{6A1D7994-AC31-4575-8CBD-65DE65ECE26D} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
+		{50F5277F-25AE-43BC-899D-AADB0F8ED453} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
