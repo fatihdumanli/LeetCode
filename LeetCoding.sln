@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMedianTwoSortedArrays",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeNumber", "String\PalindromeNumber\PalindromeNumber.csproj", "{4A4677B9-7946-4B24-B630-5AAE58760333}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelOrderTraversal", "Tree\LevelOrderTraversal\LevelOrderTraversal.csproj", "{5ED3ABC7-D3E3-4A24-8833-42BB0869D55C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,10 @@ Global
 		{4A4677B9-7946-4B24-B630-5AAE58760333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A4677B9-7946-4B24-B630-5AAE58760333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A4677B9-7946-4B24-B630-5AAE58760333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED3ABC7-D3E3-4A24-8833-42BB0869D55C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED3ABC7-D3E3-4A24-8833-42BB0869D55C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED3ABC7-D3E3-4A24-8833-42BB0869D55C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED3ABC7-D3E3-4A24-8833-42BB0869D55C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +189,7 @@ Global
 		{50F5277F-25AE-43BC-899D-AADB0F8ED453} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 		{DDEFD61A-F4EF-4934-BD46-2CEF3C8D358E} = {A66E635C-51D4-47D7-A22A-1A90293DDB56}
 		{4A4677B9-7946-4B24-B630-5AAE58760333} = {17E97854-1EAC-4463-B345-4B235B43D9B4}
+		{5ED3ABC7-D3E3-4A24-8833-42BB0869D55C} = {72FE8F68-A148-45A2-91D4-A2EE776BDF3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
