@@ -69,7 +69,5 @@ namespace ProductOfArrayExceptSelf
 
             return result;
         }
-
-        x
     }
 }
