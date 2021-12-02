@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoSumII", "Arrays\TwoSumII
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoSum", "Arrays\TwoSum\TwoSum.csproj", "{D5BFCC88-A7C6-4904-85DB-63201818EDBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximumSubarray", "Arrays\MaximumSubarray\MaximumSubarray.csproj", "{82CA9A3C-4FB7-47ED-A3BD-09A50074F898}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +187,10 @@ Global
 		{D5BFCC88-A7C6-4904-85DB-63201818EDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5BFCC88-A7C6-4904-85DB-63201818EDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5BFCC88-A7C6-4904-85DB-63201818EDBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82CA9A3C-4FB7-47ED-A3BD-09A50074F898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82CA9A3C-4FB7-47ED-A3BD-09A50074F898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82CA9A3C-4FB7-47ED-A3BD-09A50074F898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82CA9A3C-4FB7-47ED-A3BD-09A50074F898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +219,7 @@ Global
 		{D893CFC3-67E2-46D8-9FCE-5CDE4A4A843F} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 		{3A4F9A49-0495-44B7-A164-81A51504B33F} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 		{D5BFCC88-A7C6-4904-85DB-63201818EDBD} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
+		{82CA9A3C-4FB7-47ED-A3BD-09A50074F898} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
