@@ -21,6 +21,19 @@ namespace InvertBinaryTree
             Console.WriteLine("Hello World!");
         }
 
+        /*
+         *                4
+         *            /      \
+         *           2        7
+         *          / \      / \
+         *         1  3     6   9
+         *
+         *
+         *
+         *
+         *
+         * 
+         */
         private static void InvertTheTree(TreeNode treeNode)
         {
             if (treeNode == null)

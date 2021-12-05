@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximumSubarray", "Arrays\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductOfArrayExceptSelf", "Arrays\ProductOfArrayExceptSelf\ProductOfArrayExceptSelf.csproj", "{D60AF330-1189-4DA3-B0E4-A38A66D6E4C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximumProductSubArray", "Arrays\MaximumProductSubArray\MaximumProductSubArray.csproj", "{C4742ECF-7AE2-416E-BAA1-76778AC1D331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,6 +199,10 @@ Global
 		{D60AF330-1189-4DA3-B0E4-A38A66D6E4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60AF330-1189-4DA3-B0E4-A38A66D6E4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60AF330-1189-4DA3-B0E4-A38A66D6E4C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4742ECF-7AE2-416E-BAA1-76778AC1D331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4742ECF-7AE2-416E-BAA1-76778AC1D331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4742ECF-7AE2-416E-BAA1-76778AC1D331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4742ECF-7AE2-416E-BAA1-76778AC1D331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,6 +233,7 @@ Global
 		{D5BFCC88-A7C6-4904-85DB-63201818EDBD} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 		{82CA9A3C-4FB7-47ED-A3BD-09A50074F898} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 		{D60AF330-1189-4DA3-B0E4-A38A66D6E4C2} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
+		{C4742ECF-7AE2-416E-BAA1-76778AC1D331} = {4B8E71A6-12DB-4400-8FFE-724E21D9A10D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
