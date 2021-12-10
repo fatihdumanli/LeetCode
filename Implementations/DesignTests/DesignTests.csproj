@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Implementations\Hashmap\HashMap.csproj" />
-    <ProjectReference Include="..\Implementations\HashSet\HashSet.csproj" />
+    <ProjectReference Include="..\Hashmap\HashMap.csproj" />
+    <ProjectReference Include="..\HashSet\HashSet.csproj" />
   </ItemGroup>
 
 </Project>
