@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using HashMap;
 using HashSet;
+using List;
 
 namespace DesignTests
 {
@@ -9,13 +10,28 @@ namespace DesignTests
     {
         static void Main(string[] args)
         {
+            var contains = false;
+            var list = new MyList(2);
+            list.Add(2);
+            list.Add(4);
+            contains = list.Contains(4);
+            contains = list.Contains(2);
+            list.Add(5);
+            list.Add(9); 
+            contains = list.Contains(4);
+            list.Remove(4);
+            contains = list.Contains(4);
+            contains = list.Contains(2);
+            list.Add(6);
+            list.Add(12);
+
             var hashset = new MyHashSet();
             
             hashset.Add(1);
             hashset.Add(2);
             hashset.Add(2);
             hashset.Remove(2);
-            var contains = hashset.Contains(2);
+            contains = hashset.Contains(2);
 
             var hashmap = new MyHashMap();
             hashmap.Put(1, 2);

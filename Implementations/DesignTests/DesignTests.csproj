@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Hashmap\HashMap.csproj" />
     <ProjectReference Include="..\HashSet\HashSet.csproj" />
+    <ProjectReference Include="..\List\List.csproj" />
   </ItemGroup>
 
 </Project>
