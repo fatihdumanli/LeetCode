@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Hashmap\HashMap.csproj" />
     <ProjectReference Include="..\HashSet\HashSet.csproj" />
     <ProjectReference Include="..\List\List.csproj" />
+    <ProjectReference Include="..\StringBuilder\StringBuilder.csproj" />
   </ItemGroup>
 
 </Project>
