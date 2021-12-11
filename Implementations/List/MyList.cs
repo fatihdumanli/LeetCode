@@ -83,8 +83,6 @@ namespace List
             {
                 _array[i] = temp[i];
             }
-
-            _ptr = temp.Length;
         }
         
     }
