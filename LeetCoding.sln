@@ -111,6 +111,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestPalindromicSubstring
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromicSubstrings", "String\PalindromicSubstrings\PalindromicSubstrings.csproj", "{9DD78A1E-BDD4-4DA0-9C9B-6CB5CFDC56A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncodeAndDecodeStrings", "String\EncodeAndDecodeStrings\EncodeAndDecodeStrings.csproj", "{87544D93-BA6E-4698-8AC1-0583FB2061DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -301,6 +303,10 @@ Global
 		{9DD78A1E-BDD4-4DA0-9C9B-6CB5CFDC56A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD78A1E-BDD4-4DA0-9C9B-6CB5CFDC56A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DD78A1E-BDD4-4DA0-9C9B-6CB5CFDC56A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87544D93-BA6E-4698-8AC1-0583FB2061DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87544D93-BA6E-4698-8AC1-0583FB2061DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87544D93-BA6E-4698-8AC1-0583FB2061DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87544D93-BA6E-4698-8AC1-0583FB2061DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -348,6 +354,7 @@ Global
 		{71FCAC53-740D-42D8-A737-391F94412953} = {8DA12F8C-C97E-4D1A-A07C-25D154EDB7D0}
 		{E4A0DD07-AC04-4E5F-AAA8-833A4F9D3CDF} = {17E97854-1EAC-4463-B345-4B235B43D9B4}
 		{9DD78A1E-BDD4-4DA0-9C9B-6CB5CFDC56A2} = {17E97854-1EAC-4463-B345-4B235B43D9B4}
+		{87544D93-BA6E-4698-8AC1-0583FB2061DB} = {17E97854-1EAC-4463-B345-4B235B43D9B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
