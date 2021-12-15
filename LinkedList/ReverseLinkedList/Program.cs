@@ -1,53 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using Common;
 
 namespace ReverseLinkedList
 {
-    class Node
-    {
-        public int val;
-        public Node next;
-
-        public Node(int value)
-        {
-            val = value;
-        }
-    }
-    
     class Program
     {
+        private static ListNode newHead;
+
         static void Main(string[] args)
         {
+            var head = new ListNode(1);
+            head.next = new ListNode(2);
+            head.next.next = new ListNode(3);
+            head.next.next.next = new ListNode(4);
 
-            var node = new Node(1);
-            node.next = new Node(2);
-            node.next.next = new Node(3);
+            var newHead = ReverseList(head);
             
-            var result = Reverse(node);
-            
+            Console.WriteLine("Hello World!");
         }
 
-        private static Node newHead;
-        static Node Reverse(Node node)
+        
+        static ListNode ReverseList(ListNode head)
         {
-            if (node == null)
-                return null;
-
-            Reverse(node.next);
-
-            if (node.next == null)
-            {
-                newHead = node;
-            }
-
-            else
-            {
-                node.next.next = node;
-                node.next = null;
-            }
-
-            return newHead;
+            if (head.next == null)
+                return head;
+            var node = ReverseList(head.next);
+            head.next.next = head;
+            head.next = null;
+            return node;
         }
-
+        
     }
 }
