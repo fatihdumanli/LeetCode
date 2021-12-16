@@ -22,51 +22,33 @@ namespace KthElementToTheLast
 
             ListNode kthElement = null;
             var result = GetKthElementToTheTail(head, 3);
-           // var res = GetKthElementToTheTailIterative(head, 1);
+            result = GetKthElementToTheTailIterative(head, 9);
             Console.WriteLine("Hello World!");
         }
 
+        //Time complexity: O(N)
         static ListNode GetKthElementToTheTailIterative(ListNode head, int k)
         {
-            int runnerSteps = 0;
-            int currentSteps = 0;
-            ListNode current = head;
-            ListNode runner = head;
-            int stepsToTake = 0;
+            if (head == null)
+                return null;
             
-            while (current != null)
+            var first = head;
+            var runner = head;
+            for (int i = 0; i < k; i++)
             {
-                if (runner == null)
-                {
-                    if (runnerSteps % 2 == 0)
-                    {
-                        currentSteps++;
-                        current = current.next;
-                    }
-
-                    var pos = runnerSteps - k;
-                    stepsToTake = pos - currentSteps;
-                    
-                    while (stepsToTake > 0)
-                    {
-                        current = current.next;
-                        stepsToTake--;
-                    }
-
-                    return current;
-                }
-
-                if (runnerSteps % 2 == 0 && runnerSteps > 0)
-                {                    
-                    current = current.next;
-                    currentSteps++;
-                }
-                
                 runner = runner.next;
-                runnerSteps++;
+                
+                if (runner == null)
+                    throw new Exception("k is out of range");
             }
 
-            return null;
+            while (runner != null)
+            {
+                runner = runner.next;
+                first = first.next;
+            }
+
+            return first;
         }
         static ListNode GetKthElementToTheTail(ListNode head, int k)
         {
@@ -76,6 +58,10 @@ namespace KthElementToTheLast
             return GetKthElementToTheTail(head, k, index);
         }
 
+        /*
+         * Time complexity: O(N)
+         * Space complexity: O(N)
+         */
         static ListNode GetKthElementToTheTail(ListNode head, int k, Index index)
         {
             if (head == null)
