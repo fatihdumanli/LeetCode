@@ -8,48 +8,20 @@ namespace SumLists
     {
         static void Main(string[] args)
         {
-            var l1 = new ListNode(6);
-            l1.next = new ListNode(1);
-            l1.next.next = new ListNode(7);
+            var l1 = new ListNode(1);
+            l1.next = new ListNode(2);
+            l1.next.next = new ListNode(3);
+            l1.next.next.next = new ListNode(4);
             
-            
-            var l2 = new ListNode(2);
-            l2.next = new ListNode(9);
-            l2.next.next = new ListNode(5);
+            var l2 = new ListNode(5);
+            l2.next = new ListNode(6);
+            l2.next.next = new ListNode(7);
 
-            var sum = SumListsReverseIterative(l1, l2);
-            sum = SumListsReverseRecursive(l1, l2);
-            sum = SumListsForward(l1, l2);
+            //var sum = SumListsReverseIterative(l1, l2);
+            //sum = SumListsReverseRecursive(l1, l2);
+            //sum = SumListsForward(l1, l2);
         }
 
-        private static ListNode newHead = new ListNode(0);
-        static ListNode SumListsForward(ListNode l1, ListNode l2)
-        {
-            SumListsForwardHelper(l1, l2);
-            return newHead;
-        }
-
-        static int SumListsForwardHelper(ListNode l1, ListNode l2, int carry = 0)
-        {
-            if (l1 == null && l2 == null)
-                return carry;
-
-            carry = SumListsForwardHelper(l1?.next, l2?.next, carry);
-
-            var l1Value = l1?.val ?? 0;
-            var l2Value = l2?.val ?? 0;
-
-            newHead.next = new ListNode((l1Value + l2Value + carry) % 10);
-            newHead = newHead.next;
-
-            return (l1Value + l2Value) / 10;
-        }
-        
-        
-        
-        
-        
-        
         static ListNode SumListsReverseRecursive(ListNode l1, ListNode l2, int carry = 0)
         {
             if(l1 == null && l2 == null && carry == 0)
@@ -62,6 +34,8 @@ namespace SumLists
         
             return new ListNode(sum%10) { next = SumListsReverseRecursive(l1?.next, l2?.next, sum / 10) };
         }
+        
+        
         static ListNode SumListsReverseIterative(ListNode l1, ListNode l2)
         {
             int carry = 0;
