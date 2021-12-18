@@ -17,7 +17,34 @@ namespace MergeTwoSortedLists
             listNode2.next = new ListNode(3);
             listNode2.next.next = new ListNode(4);
             
-            var newHead = MergeTwoLists(listNode1, listNode2);
+            var newHead = MergeTwoListsRecursive(listNode1, listNode2);
+        }
+
+        static ListNode MergeTwoListsRecursive(ListNode list1, ListNode list2)
+        {
+            if (list1 == null)
+                return list2;
+
+            if (list2 == null)
+                return list1;
+
+            if (list1 != null && list2 != null)
+                return list1.val < list2.val ? list1 : list2;
+            
+            list1.next = MergeTwoListsRecursive(list1.next, list2.next);
+
+            return list1.val < list2.val ? list1 : list2;
+        }
+        
+
+        public static ListNode InsertBefore(ListNode node, int value)
+        {
+            if(node == null)
+                return new ListNode(value);
+        
+            var newHead = new ListNode(value);
+            newHead.next = node;
+            return newHead;
         }
 
         static ListNode MergeTwoLists(ListNode l1, ListNode l2)
