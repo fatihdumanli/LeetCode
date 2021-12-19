@@ -149,6 +149,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReorderList", "LinkedList\R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "Implementations\LinkedList\LinkedList.csproj", "{C2BF9152-E1B1-4AF4-B72E-48C895DA6CC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeKSortedLists", "LinkedList\MergeKSortedLists\MergeKSortedLists.csproj", "{6F38CDB6-6F7D-4025-AF99-B2B109D8628C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -415,6 +417,10 @@ Global
 		{C2BF9152-E1B1-4AF4-B72E-48C895DA6CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2BF9152-E1B1-4AF4-B72E-48C895DA6CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2BF9152-E1B1-4AF4-B72E-48C895DA6CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F38CDB6-6F7D-4025-AF99-B2B109D8628C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F38CDB6-6F7D-4025-AF99-B2B109D8628C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F38CDB6-6F7D-4025-AF99-B2B109D8628C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F38CDB6-6F7D-4025-AF99-B2B109D8628C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -482,6 +488,7 @@ Global
 		{C089872B-B222-426F-B051-3173D0775BA9} = {F531DE4C-1482-4CB9-8337-D9B8CA623A71}
 		{DD330BCA-2FBC-4703-B25A-FEE7FA6B0AC8} = {F531DE4C-1482-4CB9-8337-D9B8CA623A71}
 		{C2BF9152-E1B1-4AF4-B72E-48C895DA6CC0} = {5C264BD3-4F9B-431D-818B-34E3932CB52B}
+		{6F38CDB6-6F7D-4025-AF99-B2B109D8628C} = {F531DE4C-1482-4CB9-8337-D9B8CA623A71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D121EDF-27DD-498F-AA04-1E1457937327}
