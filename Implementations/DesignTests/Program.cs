@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using HashMap;
 using HashSet;
 using List;
+using Queue;
+using Stack;
 using StringBuilder;
 
 namespace DesignTests
@@ -11,6 +14,40 @@ namespace DesignTests
     {
         static void Main(string[] args)
         {
+            var stopwatch = new Stopwatch();
+
+            var queue = new MyQueue();
+            queue.Enqueue(1);
+            var t = queue.Dequeue();
+            //t = queue.Dequeue();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            var r = queue.Dequeue();
+            r = queue.Dequeue();
+            r = queue.Dequeue();
+            //r = queue.Dequeue();
+            queue.Enqueue(9);
+            r = queue.Dequeue();
+            r = queue.Dequeue();
+          
+
+            var stack = new MyStack();
+            stack.Push(1);   
+            stack.Push(2);   
+            stack.Push(3);   
+            stack.Push(4);
+
+
+            var isEmpty = stack.IsEmpty();
+            var popped = stack.Pop();
+            var poppped2 = stack.Pop();
+            stack.Push(13);
+            var popped3 = stack.Pop();
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
 
             var contains = false;
             var list = new MyList(2);
