@@ -13,5 +13,9 @@ namespace Common
         {
             this.val = val;
         }
+        
+        public TreeNode()
+        {
+        }
     }
 }

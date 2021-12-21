@@ -24,9 +24,37 @@ namespace SameTree
             treeNode2.right = new TreeNode(2);
          
 
-            var result = IsSameTree(treeNode, treeNode2);
+            var result = SameTree(treeNode, treeNode2);
         }
 
+        static bool SameTree(TreeNode p, TreeNode q)
+        {  if(p == null && q == null)
+                         return true;
+                 
+                     if(p == null || q == null)
+                         return false;
+         
+                     return p.val == q.val && SameTree(p.left, q.left) && SameTree(p.right, q.right);
+          
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         private static bool IsSameTree(TreeNode p, TreeNode q)
         {
             if (p == null && q == null)
