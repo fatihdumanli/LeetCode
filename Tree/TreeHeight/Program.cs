@@ -7,14 +7,18 @@ namespace TreeHeight
     {
         static void Main(string[] args)
         {
-            var root = new TreeNode(3);
-            root.left = new TreeNode(9);
-            
-            root.right = new TreeNode(20);
-            root.right.left = new TreeNode(15);
-            root.right.right = new TreeNode(7);
+            var treeNode = new TreeNode(5);
+            treeNode.left = new TreeNode(4);
+            treeNode.left.left = new TreeNode(3);
+            treeNode.left.left.left = new TreeNode(2);
+            treeNode.left.right = new TreeNode(6);
+            treeNode.left.right.right = new TreeNode(7);
+            treeNode.left.right.right.left = new TreeNode(6);
 
-            var result = MaxDepth(root);
+            treeNode.right = new TreeNode(7);
+            treeNode.right.right = new TreeNode(9);
+            
+            var result = MaxDepth(treeNode);
             Console.WriteLine(result);
         }
 
@@ -23,10 +27,10 @@ namespace TreeHeight
             if(root == null)
                 return 0;    
         
-            var leftDepth = MaxDepth(root.left) + 1;
-            var rightDepth = MaxDepth(root.right) + 1;
+            var leftDepth = MaxDepth(root.left);
+            var rightDepth = MaxDepth(root.right);
         
-            return Math.Max(leftDepth, rightDepth);
+            return Math.Max(leftDepth, rightDepth) + 1;
         }
     }
 }
