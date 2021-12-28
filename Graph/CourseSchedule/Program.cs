@@ -41,8 +41,7 @@ namespace CourseSchedule
             }
 
             int[] verticesColors = new int[numCourses];
-
-          
+            
             foreach (var item in adjList)
             {
                 if (!DFS(item.Key, adjList, verticesColors))
