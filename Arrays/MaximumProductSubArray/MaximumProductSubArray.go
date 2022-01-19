@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	//	nums := []int{2, 3, -2, 4}
-	nums := []int{-1, 0, -3}
+	nums := []int{2, 3, -2, 4, -1, 5}
 	res := maxProduct(nums)
 	fmt.Println(res)
 }
@@ -13,27 +13,22 @@ func main() {
 //  2, 3, -2, 8
 //  -1, 0, -3
 //  2,  3,  -2,  4, -1, 5
-
 func maxProduct(nums []int) int {
 
-	/*
-		//min	max
-		1	2
-		1	6
-
-	*/
-	result := nums[0]
-	min, max := 1, 1
-
-	product := 1
-	for _, elm := range nums {
-		product *= elm
-		tmpMin := min
-		min = Min(Min(min, min*elm), max*elm)
-		max = Max(Max(max, product), tmpMin*elm)
+	if len(nums) == 1 {
+		return nums[0]
 	}
 
-	result = max
+	min, max := 1, 1
+
+	result := nums[0]
+	for _, item := range nums {
+		tmpMin := min
+		min = Min(Min(item, item*min), item*max)
+		max = Max(Max(item, item*max), tmpMin*item)
+		result = Max(result, max)
+	}
+
 	return result
 }
 
