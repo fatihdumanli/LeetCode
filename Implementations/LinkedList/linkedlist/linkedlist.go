@@ -68,12 +68,17 @@ func (this *MyLinkedList) AddAtIndex(index int, val int) {
 		return
 	}
 
+	if index == 0 {
+		this.head = &listNode{val: val, next: this.head}
+		return
+	}
+
 	ptr := this.head
 	for i := 0; i < index-1; i++ {
 		ptr = ptr.next
 	}
 
-	ptr.next = &listNode{val: val}
+	ptr.next = &listNode{val: val, next: ptr.next}
 }
 
 func (this *MyLinkedList) DeleteAtIndex(index int) {

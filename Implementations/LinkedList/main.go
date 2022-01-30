@@ -1,14 +1,14 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/fatihdumanli/LeetCode/Implementations/LinkedList/linkedlist"
 )
 
 func main() {
 
 	// 2 -> 1 -> 3
-	var myList = linkedlist.Constructor()
-	fmt.Println(myList.Get(0))
+	var list = linkedlist.Constructor()
+	list.AddAtHead(1)
+	list.AddAtTail(3)
+	list.AddAtIndex(3, 2)
 }

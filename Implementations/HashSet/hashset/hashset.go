@@ -5,9 +5,6 @@ type listNode struct {
 	next *listNode
 }
 
-//TODO make experiment.
-//first, pass ptr of myhashset
-//then pass ptr of slice and see if they're mutable
 type MyHashSet struct {
 	buckets []*listNode
 }
@@ -80,8 +77,5 @@ func (this *MyHashSet) Contains(key int) bool {
 		if bucket.val == key {
 			return true
 		}
-		bucket = bucket.next
-	}
-
 	return false
 }
