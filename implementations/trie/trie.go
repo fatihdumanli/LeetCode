@@ -30,12 +30,7 @@ func (this *Trie) Insert(word string) {
 		}
 	}
 
-	endTheWord(currentNode)
-}
-
-//Appends a nil node to the node to indicate the end of the current word
-func endTheWord(n *Trie) {
-	*n.children = append(*n.children, &Trie{isNilNode: true})
+	*currentNode.children = append(*currentNode.children, &Trie{isNilNode: true})
 }
 
 //Appends a new child to the given node
