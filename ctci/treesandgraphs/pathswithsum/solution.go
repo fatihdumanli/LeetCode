@@ -34,7 +34,6 @@ func helper(root *TreeNode, sum int, target int, result *int) {
 	}
 
 	sum += root.Val
-
 	if sum == target {
 		*result++
 	}
