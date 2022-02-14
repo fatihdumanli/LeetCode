@@ -3,11 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var matrix [][]int = make([][]int, 1)
-
-	matrix[0] = make([]int, 3)
-
-	matrix[0] = []int{1, 2, 3}
+	var matrix [][]int = make([][]int, 3)
 
 	//matrix[0] = make([]int, 4)
 	//matrix[1] = make([]int, 4)
@@ -21,9 +17,9 @@ func main() {
 	//matrix[1] = make([]int, 3)
 	//matrix[2] = make([]int, 3)
 
-	//matrix[0] = []int{1, 2, 3}
-	//matrix[1] = []int{4, 5, 6}
-	//matrix[2] = []int{7, 8, 9}
+	matrix[0] = []int{1, 2, 3}
+	matrix[1] = []int{4, 5, 6}
+	matrix[2] = []int{7, 8, 9}
 	res := spiralOrder(matrix)
 	fmt.Println(res)
 }
