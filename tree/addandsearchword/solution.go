@@ -26,13 +26,13 @@ Output
 
 type Node struct {
 	Val        int
-	Children   *[]*Node
+	Children   *[27]*Node
 	IsNilNode  bool
 	IsRootNode bool
 }
 
 func NewNode(val rune) *Node {
-	var children []*Node
+	var children [27]*Node
 	return &Node{
 		Val:      int(val),
 		Children: &children,
@@ -40,45 +40,9 @@ func NewNode(val rune) *Node {
 }
 func NewNilNode() *Node {
 	return &Node{
-		Children:  &[]*Node{},
+		Children:  &[27]*Node{},
 		IsNilNode: true,
 	}
-}
-
-func (n *Node) appendChild(val rune) *Node {
-	var newChild = NewNode(val)
-	*n.Children = append(*n.Children, newChild)
-	return newChild
-}
-
-func (n *Node) appendNilChild() {
-	var newChild = NewNilNode()
-	*n.Children = append(*n.Children, newChild)
-}
-
-func (n *Node) containsNilChild() bool {
-
-	if n.IsNilNode {
-		return false
-	}
-
-	for _, c := range *n.Children {
-		if c.IsNilNode {
-			return true
-		}
-	}
-	return false
-}
-
-func (n *Node) getChild(val rune) *Node {
-
-	for _, c := range *n.Children {
-		if c.Val == int(val) {
-			return c
-		}
-	}
-
-	return nil
 }
 
 type WordDictionary struct {
@@ -86,7 +50,7 @@ type WordDictionary struct {
 }
 
 func Constructor() WordDictionary {
-	var rootNode = Node{IsRootNode: true, Children: &[]*Node{}}
+	var rootNode = Node{IsRootNode: true, Children: &[27]*Node{}}
 	return WordDictionary{root: &rootNode}
 }
 
@@ -94,15 +58,16 @@ func (this *WordDictionary) AddWord(word string) {
 	var ptr = this.root
 
 	for _, r := range word {
-		child := ptr.getChild(r)
+
+		child := ptr.Children[r-'a']
 		if child == nil {
-			child = ptr.appendChild(r)
-			ptr = child
-		} else {
-			ptr = child
+			ptr.Children[r-'a'] = NewNode(r)
 		}
+
+		ptr = ptr.Children[r-'a']
 	}
-	ptr.appendNilChild()
+
+	ptr.Children[26] = NewNilNode()
 }
 
 func (this *WordDictionary) Search(word string) bool {
@@ -114,13 +79,21 @@ func search(word string, i int, n *Node) bool {
 	//return true if the current node contains a nil child
 	//otherwise, return false
 	if i == len(word) {
-		return n.containsNilChild()
+		if n == nil || n.Children == nil {
+			return false
+		}
+		return n.Children[26] != nil
 	}
 
 	var currentRune = word[i]
 
 	if currentRune == byte('.') {
 		for _, c := range *n.Children {
+
+			if c == nil {
+				continue
+			}
+
 			var r = search(word, i+1, c)
 
 			//if one of the children returns true, skip the rest of the children
@@ -130,7 +103,7 @@ func search(word string, i int, n *Node) bool {
 		}
 	} else {
 
-		var c = n.getChild(rune(currentRune))
+		var c = n.Children[currentRune-'a']
 		if c == nil {
 			return false
 		}
