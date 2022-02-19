@@ -8,13 +8,18 @@ import (
 type TreeNode = dsa.TreeNode
 
 func main() {
-	var root = &TreeNode{Val: -10}
+	var root = &TreeNode{Val: 9}
+	root.AddLeftChild(6)
 
-	root.AddLeftChild(9)
-	root.AddRightChild(20)
-	root.Right.AddLeftChild(15)
-	root.Left.AddLeftChild(20)
-	root.Left.AddRightChild(40)
+	root.AddRightChild(-3)
+	root.Right.AddLeftChild(-6)
+
+	root.Right.AddRightChild(2)
+	root.Right.Right.AddLeftChild(2)
+
+	root.Right.Right.Left.AddRightChild(-6)
+	root.Right.Right.Left.AddLeftChild(-6)
+	root.Right.Right.Left.Left.AddLeftChild(-6)
 
 	res := maxPathSum(root)
 	fmt.Println(res)
@@ -25,39 +30,34 @@ func maxPathSum(root *TreeNode) int {
 		return 0
 	}
 
-	var rootVal = root.Val
-	_ = rootVal
-
-	var leftRes = maxPathSum(root.Left)
-	var rightRes = maxPathSum(root.Right)
-
-	_ = leftRes
-	_ = rightRes
-
-	res := helper(root, 0)
-	_ = res
-	greaterPath := Max(leftRes, rightRes)
-	totalPath := leftRes + rightRes + root.Val
-
-	return Max(greaterPath, totalPath)
-
+	var max int = root.Val
+	helper(root, &max)
+	return max
 }
 
-func helper(root *TreeNode, sum int) int {
+func helper(root *TreeNode, max *int) int {
 	if root == nil {
 		return 0
 	}
 
-	var rootVal = root.Val
-	_ = rootVal
+	left := helper(root.Left, max)
+	right := helper(root.Right, max)
 
-	sum = sum + root.Val
-	r := helper(root.Left, sum)
-	l := helper(root.Right, sum)
+	var leftIncluded = left + root.Val
+	var rightIncluded = right + root.Val
+	var bothIncluded = right + left + root.Val
 
-	max := Max(r, l)
+	*max = Max(*max, root.Val)
+	*max = Max(*max, leftIncluded)
+	*max = Max(*max, rightIncluded)
+	*max = Max(*max, bothIncluded)
 
-	return max + root.Val
+	var maxChild = Max(left, right)
+	if maxChild < 0 {
+		return root.Val
+	}
+
+	return Max(left, right) + root.Val
 }
 
 func Max(a, b int) int {
