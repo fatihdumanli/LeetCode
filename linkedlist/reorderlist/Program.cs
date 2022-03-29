@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Common;
 
 namespace ReorderList
 {
+    public class ListNode {
+        public int val { get; set; }
+        public ListNode next { get; set; }
+        public ListNode(int val)
+        {
+            this.val = val;
+        }
+    }
     public class LastElementWrapper {
         public ListNode newHead;
         public int lastNodeVal;
@@ -14,7 +21,6 @@ namespace ReorderList
     {
         static void Main(string[] args)
         {
-            
             var head = new ListNode(1);
 
             var headPtr = head;
@@ -44,9 +50,6 @@ namespace ReorderList
             ReorderList(head);
             stopwatch.Stop();
             Console.WriteLine($"Solution with stack/queue took {stopwatch.ElapsedTicks} ticks");
-
-
-            
         }
 
         static void ReorderListPtrs(ListNode head)
@@ -90,9 +93,6 @@ namespace ReorderList
                 startPtr = startPtr.next;
                 length -= 2;
             }
-
-            var x = 2;
-
         }
 
         static void ReorderList(ListNode head)
