@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 
 	/*
@@ -22,14 +20,23 @@ func main() {
 		get(1)
 		get(2)
 	*/
-	var cache = Constructor(2)
-	cache.Get(2)
-	cache.Put(2, 6)
-	cache.Get(1)
-	cache.Put(1, 5)
-	cache.Put(1, 2)
-	cache.Get(1)
+	var cache = Constructor(3)
+	cache.Put(1, 1)
+	cache.Put(2, 2)
+	cache.Put(3, 3)
+	cache.Put(4, 4)
 
-	res := cache.Get(2)
-	fmt.Println(res)
+	cache.Get(4)
+	cache.Get(3) //PROBLEM. head is changing
+	cache.Get(2)
+	cache.Get(1) //must be evicted
+
+	cache.Put(5,5) //are we updating the head?
+
+	cache.Get(1)
+	cache.Get(2) //not this one
+	cache.Get(3)
+	cache.Get(4) //must be evicted
+	cache.Get(5)
+
 }
