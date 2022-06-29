@@ -1,0 +1,1 @@
+﻿var lruCache = new LRUCache(2);
