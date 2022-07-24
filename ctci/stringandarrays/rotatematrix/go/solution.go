@@ -40,9 +40,11 @@ func rotate(matrix [][]int) {
 	for layer := 0; layer < n/2; layer++ {
 		first := layer
 		last := n - 1 - layer
+
 		for i := first; i < last; i++ {
 			top := matrix[first][i]
 			offset := i - first
+
 			//left -> top
 			matrix[first][i] = matrix[last-offset][first]
 			//bottom -> left
