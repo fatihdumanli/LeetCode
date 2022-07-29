@@ -26,3 +26,4 @@ PackageSettings.cs
 words.txt
 README.md
 .progress
+out/
