@@ -10,8 +10,8 @@ func main() {
 	dict.AddWord("a")
 	dict.AddWord("a")
 
-	fmt.Println(dict.Search("a."))
-
+	res := dict.Search("a.")
+	fmt.Println(res)
 }
 
 /*
