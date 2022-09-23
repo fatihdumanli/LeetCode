@@ -1,0 +1,20 @@
+ {
+   "configurations": {
+     "attach": {
+       "adapter": "netcoredbg",
+       "configuration": {
+         "request": "attach",
+         "processId": "${pid}"
+       }
+     },
+     "launch": {
+       "adapter": "netcoredbg",
+       "configuration": {
+         "request": "launch",
+         "program": "/home/fatih/projects/leetcode/tree/subtreeofanothertree/cs/SubTreeOfAnotherTree/bin/Debug/net6.0/SubTreeOfAnotherTree.dll",
+         "args": [],
+         "stopAtEntry": false
+       }
+     }
+   }
+ }
