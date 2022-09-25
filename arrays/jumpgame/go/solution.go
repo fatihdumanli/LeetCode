@@ -2,19 +2,35 @@ package main
 
 import "fmt"
 
+//https://leetcode.com/problems/jump-game
 func main() {
-	//nums := []int{3, 2, 1, 0, 4}
-	nums := []int{2, 3, 1, 1, 4}
+	nums := []int{3, 2, 1, 1, 4}
 	r := canJump(nums)
 	fmt.Println(r)
 }
-func intp(x int) *int {
-	var val = x
-	return &val
+
+//Greedy Solution
+func canJumpGreedy(nums []int) bool {
+
+	canJump := true
+
+	need := 1
+
+	for i := len(nums) - 2; i >= 0; i-- {
+		if nums[i] >= need {
+			canJump = true
+			need = 1
+		} else {
+			need++
+			canJump = false
+		}
+	}
+
+	return canJump
 }
 
+//Dynamic Programming Solution
 func canJump(nums []int) bool {
-
 	dp := make([]*int, len(nums))
 	return helper(0, nums, dp)
 }
@@ -48,4 +64,9 @@ func helper(current int, nums []int, dp []*int) bool {
 	}
 
 	return false
+}
+
+func intp(x int) *int {
+	var val = x
+	return &val
 }
