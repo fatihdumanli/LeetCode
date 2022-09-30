@@ -18,9 +18,13 @@ func (q *queue) enqueue(val int) {
 		return
 	}
 
-	newHead := &listNode{val: val}
-	newHead.next = q.head
-	q.head = newHead
+	var ptr = q.head
+
+	for ptr.next != nil {
+		ptr = ptr.next
+	}
+
+	ptr.next = &listNode{val: val}
 }
 
 func (q *queue) dequeue() int {
