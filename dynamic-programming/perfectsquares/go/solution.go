@@ -5,6 +5,7 @@ import (
 	"math"
 )
 
+//https://leetcode.com/problems/perfect-squares/
 func main() {
 	r := numSquares(100)
 	//r := numSquares(7929)
