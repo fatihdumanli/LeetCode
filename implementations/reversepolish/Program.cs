@@ -2,49 +2,36 @@
 //var tokens = new string[] { "4", "13", "5", "/", "+" };
 //var tokens = new string[] { "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+" };
 //var tokens = new string[] { "3", "11", "5", "+", "-" };
-var tokens = new string[] { "4", "-2", "/", "2", "-3", "-", "-" };
+//var tokens = new string[] { "4", "-2", "/", "2", "-3", "-", "-" };
+var tokens = new string[] { "4", "13", "5", "/", "+" };
 Console.WriteLine(EvalRPN(tokens));
 
 
 //https://leetcode.com/problems/evaluate-reverse-polish-notation/discuss/2922775/C-Solution-with-only-1-if-block-oror-Beats-100
 int EvalRPN(string[] tokens)
 {
-    Stack<string> stack = new Stack<string>();
+    Stack<int> stack = new Stack<int>();
 
-    Dictionary<char, Func<int, int, int>> map = new Dictionary<char, Func<int, int, int>>();
-    map.Add('+', (a, b) => a + b);
-    map.Add('-', (a, b) => a - b);
-    map.Add('*', (a, b) => a * b);
-    map.Add('/', (a, b) =>
+    Dictionary<string, Func<int, int, int>> map = new()
     {
-        if (Math.Abs(a / b) < 1)
-        {
-            return 0;
-        }
-        return a / b;
-    });
+        { "+", (a, b) => a + b },
+        { "-", (a, b) => a - b },
+        { "*", (a, b) => a * b },
+        { "/", (a, b) => a / b }
+    };
 
-    for (int i = 0; i < tokens.Length; i++)
+
+    foreach (var token in tokens)
     {
-        if (IsNumber(tokens[i]))
-        {
-            stack.Push(tokens[i]);
-        }
+        if (int.TryParse(token, out int val))
+            stack.Push(val);
         else
         {
-            var op = tokens[i][0];
-
-            var num2 = Convert.ToInt32(stack.Pop());
-            var num1 = Convert.ToInt32(stack.Pop());
-
-            stack.Push((map[op](num1, num2)).ToString());
+            var num2 = stack.Pop();
+            var num1 = stack.Pop();
+            stack.Push((map[token](num1, num2)));
         }
     }
 
-    return Convert.ToInt32(stack.Pop());
-}
-
-bool IsNumber(string x)
-{
-    return Int32.TryParse(x, out int i);
+    return stack.Pop();
 }
