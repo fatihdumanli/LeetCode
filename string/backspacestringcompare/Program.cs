@@ -15,7 +15,8 @@ class Program
     }
 
     // https://leetcode.com/problems/backspace-string-compare
-    // This solution does not use any memory
+    // This solution does not use any memory - at least practically.
+    // StringBuilders are used to be able to manipulate characters.
     // Based on rewriting removed characters with X
     // Then two pointers used for comparison.
     // O(N) time complexity - O(1) space complexity
