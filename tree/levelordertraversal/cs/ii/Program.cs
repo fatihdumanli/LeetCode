@@ -38,6 +38,12 @@ class Program
         Console.WriteLine("Hello, World!");
     }
 
+    // https://leetcode.com/problems/binary-tree-level-order-traversal
+    // Different than the queue solution
+    // Create a dictionary with KEY OF LEVEL and VALUE OF LIST OF VALUES
+    // Pass along the level as we proceed in recursion
+    // Get the collection from the dictionary
+    // Add the current node to the corresponding collection
     public static IList<IList<int>> LevelOrder(TreeNode root) {
 
         var result = new List<IList<int>>();
