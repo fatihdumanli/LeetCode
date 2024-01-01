@@ -15,29 +15,40 @@ class Program
     {
         var result = new List<IList<int>>();
 
-        PermuteHelper(new List<int>(), nums.ToList(), result);
+        var prefix = new int[nums.Length];
+
+        for (int i = 0; i < prefix.Length; i++)
+            prefix[i] = 99;
+
+        PermuteHelper(prefix, nums, c: 0, result);
 
         return result;
     }
 
-    public static void PermuteHelper(List<int> prefix, List<int> input, List<IList<int>> result)
+    // https://leetcode.com/problems/permutations/
+    public static void PermuteHelper(int[] prefix, int[] input, int c, List<IList<int>> result)
     {
-        if (input.Count == 0)
+        if (prefix[prefix.Length - 1]  != 99)
         {
             result.Add(prefix);
 
             return;
         }
 
-        for(int i = 0; i < input.Count; i++)
+        for(int i = 0; i < input.Length; i++)
         {
-            var newPrefix = new List<int>(prefix);
-            newPrefix.Add(input[i]);
+            if (input[i] == 99)
+                continue;
 
-            var newInput = new List<int>(input);
-            newInput.RemoveAt(i);
+            var temp = input[i];
 
-            PermuteHelper(newPrefix, newInput, result);
+            prefix[c] = input[i];
+
+            input[i] = 99;
+
+            PermuteHelper(prefix, input, c + 1, result);
+
+            input[i] = temp;
         }
     }
 }
