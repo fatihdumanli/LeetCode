@@ -8,8 +8,11 @@ type ListNode struct {
 }
 
 func main() {
-    head := &ListNode{Val: 3, Next: &ListNode{Val: 2, Next: &ListNode{Val: 0, Next: &ListNode{Val: -4}}}}
+    //( head := &ListNode{Val: 3, Next: &ListNode{Val: 2, Next: &ListNode{Val: 0, Next: &ListNode{Val: -4}}}}
+    // head.Next.Next.Next.Next = head.Next
+    head := &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4}}}}
     head.Next.Next.Next.Next = head.Next
+
     r := detectCycle(head)
     fmt.Println(r)
 }
@@ -17,16 +20,43 @@ func main() {
 // https://leetcode.com/problems/linked-list-cycle-ii
 func detectCycle(head *ListNode) *ListNode {
 
-    var hashset map[*ListNode]bool = make(map[*ListNode]bool)
-    var ptr = head
+    var length = 1
+    var slow *ListNode
+    var fast *ListNode
 
-    for ptr != nil {
-        if _, ok := hashset[ptr]; ok {
-            return ptr
+    slow = head
+    fast = head.Next
+
+    for fast != nil && fast.Next != nil {
+        slow = slow.Next
+        fast = fast.Next.Next
+        length += 2
+
+        if slow == fast {
+            break
         }
+    }
 
-        hashset[ptr] = true
-        ptr = ptr.Next
+    // No cycle
+    if fast == nil || fast.Next == nil {
+        return nil
+    }
+
+    // Now we try one by one every node
+    // If the fast pointer equals to the fixed one, 
+    // That's where the cycle starts
+
+    slow = head
+    fast = head.Next
+
+    for slow != nil {
+        for i := 0; i < length; i++ {
+            if slow == fast {
+                return slow
+            }
+            fast = fast.Next
+        }
+        slow = slow.Next
     }
 
     return nil
