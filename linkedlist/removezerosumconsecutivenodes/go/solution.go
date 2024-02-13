@@ -8,7 +8,8 @@ type ListNode struct {
 }
 
 func main() {
-    head := &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: &ListNode{Val: 2, Next: &ListNode{Val: -2, Next: &ListNode{Val: -2, Next: &ListNode{Val: 4, Next: &ListNode{Val: -2}}}}}}}
+    // head := &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: &ListNode{Val: 2, Next: &ListNode{Val: -2, Next: &ListNode{Val: -2, Next: &ListNode{Val: 4, Next: &ListNode{Val: -2}}}}}}}
+    head := &ListNode{Val: 0}
     r := removeZeroSumSublists(head)
     fmt.Println(r)
 }
@@ -19,18 +20,17 @@ func removeZeroSumSublists(head *ListNode) *ListNode {
     var ptr = head
     var cnt = 0 
     var sumArr []int
+    var zeroIndex = -1
 
     for ptr != nil {
-        sumArr = fillSumArr(sumArr, cnt, ptr.Val)
+        sumArr, zeroIndex = fillSumArr(sumArr, cnt, ptr.Val)
 
-        r := searchZero(sumArr)
-
-        if r != -1 {
+        if zeroIndex != -1 {
             // modify sumArr
-            sumArr = disableRemovedNodeSums(sumArr, r, cnt)
+            sumArr = disableRemovedNodeSums(sumArr, zeroIndex, cnt)
 
             // modify linked list
-            disableRemovedNodes(head, r, cnt)
+            disableRemovedNodes(head, zeroIndex, cnt)
         }
 
         ptr = ptr.Next
@@ -74,27 +74,24 @@ func disableRemovedNodeSums(sumArr []int, start int, end int) []int {
     return sumArr
 }
 
-// returns the position of a zero if found
-// -1 otherwise
-func searchZero(sumArr []int) int {
-    for i := 0; i < len(sumArr); i++ {
-        if sumArr[i] == 0 {
-            return i
-        }
+func fillSumArr(sumArr []int, cnt int, val int) ([]int, int) {
+
+    var zeroIndex int = -1
+
+    if val == 0 {
+        zeroIndex = cnt
     }
-
-    return -1
-}
-
-func fillSumArr(sumArr []int, cnt int, val int) []int {
-
     sumArr = append(sumArr, val)
     for i := 0; i < cnt; i++ {
         if sumArr[i] == DELETED_NODE {
             continue
         }
         sumArr[i] = sumArr[i] + val
+        if sumArr[i] == 0 {
+            zeroIndex = i
+        }
     }
-    return sumArr
+
+    return sumArr, zeroIndex
 }
 
