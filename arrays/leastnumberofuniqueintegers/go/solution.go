@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
         "sort"
-	"math"
 )
 
 func main() {
