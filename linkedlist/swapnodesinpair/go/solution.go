@@ -31,6 +31,13 @@ func swapPairs(head *ListNode) *ListNode {
     var bNext = b.Next
 
     for b != nil {
+        // (F) -> 1 -> 2 -> 3 -> 4 ->
+        // a = (1)
+        // b = (2)
+        // aPre = (F)
+        // bNext = (3)
+        // swapping: aPre.Next = b, b.Next = a, a.Next = bNext
+
         bNext = b.Next
         aPre.Next = b
         b.Next = a
