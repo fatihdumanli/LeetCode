@@ -11,6 +11,7 @@ class Program
         Console.WriteLine(JsonSerializer.Serialize(r));
     }
 
+    // https://leetcode.com/problems/pascals-triangle-ii/
     static IList<int> GetRow(int rowIndex)
     {
         var prev = new int[] { 1 };
