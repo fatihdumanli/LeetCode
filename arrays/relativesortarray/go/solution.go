@@ -10,9 +10,42 @@ func main() {
     arr1 := []int{28,6,22,8,44,17}
     arr2 := []int{22,28,8,6}
 
-    r := relativeSortArray(arr1, arr2);
+    r := relativeSortArrayWithBuckets(arr1, arr2);
     fmt.Println(r);
 }
+
+
+func relativeSortArrayWithBuckets(arr1 []int, arr2 []int) []int {
+
+    var bucket = make([]int, 1001);
+
+    for i := 0; i < len(arr1); i++ {
+        var num = arr1[i];
+
+        bucket[num]++;
+    }
+
+    var result = []int{}
+
+    for i := 0; i < len(arr2); i++ {
+        var num = arr2[i];
+
+        for bucket[num] > 0 {
+            result = append(result, num);
+            bucket[num]--;
+        }
+    }
+
+    for i := 0; i < len(bucket); i++ {
+        for bucket[i] > 0 {
+            result = append(result, i);
+            bucket[i]--;
+        }
+    }
+
+    return result;
+}
+
 
 // https://leetcode.com/problems/relative-sort-array
 func relativeSortArray(arr1 []int, arr2 []int) []int {
