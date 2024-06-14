@@ -13,6 +13,29 @@ func main() {
 }
 
 
+func minMovesToSeat2(seats []int, students []int) int {
+    var result = 0;
+
+    sort.Slice(seats, func(i, j int) bool {
+        return seats[i] <= seats[j];
+    });
+
+    sort.Slice(students, func(i, j int) bool {
+        return students[i] <= students[j];
+    });
+
+
+    for i := 0; i < len(seats); i++ {
+        var seatIdx = seats[i];
+        var studentIdx = students[i];
+
+        var diff = Abs(seatIdx - studentIdx);
+        result += diff;
+    }
+
+    return result;
+}
+
 // https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone
 func minMovesToSeat(seats []int, students []int) int {
 
@@ -37,15 +60,10 @@ func minMovesToSeat(seats []int, students []int) int {
         return students[i] <= students[j];
     });
 
-    // BEGIN
-
     var result = 0;
     var studentPtr = 0;
 
     for i := 0; i < len(seats); i++ {
-
-        fmt.Println(seatBuckets);
-        fmt.Println(studentBuckets);
 
         var seatIdx = seats[i];
         var seatCount = seatBuckets[seatIdx];
